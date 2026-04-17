@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../bloc/onboarding_bloc.dart';
 import '../bloc/onboarding_event.dart';
@@ -80,8 +81,7 @@ class WelcomeScreen extends StatelessWidget {
                                 context.read<OnboardingBloc>().add(
                                   SubmitOnboarding(),
                                 );
-                                // Lógica de navegação iria aqui, após o estado calcular
-                                // ou ouvindo um BlocListener
+                                context.go('/water-intake');
                               }
                             : null,
                         child: const Text(
